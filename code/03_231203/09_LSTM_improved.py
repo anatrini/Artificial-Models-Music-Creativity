@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 # 1. using a LSTM model
 # 2. multiple layers, dropout, weight_decay, early stopping
 
-midi_file = './data/agnusdei_1.mid'  # Replace with the path to your MIDI file
+midi_file = '../../data/agnusdei_1.mid'  # Replace with the path to your MIDI file
 midi_data = pretty_midi.PrettyMIDI(midi_file)
 
 # Extract the melody (e.g., by choosing a specific instrument track)
@@ -92,6 +92,8 @@ for epoch in range(num_epochs):
         prediction = model(input_seq)
 
         predictions.append(prediction.detach().numpy())
+        print(f'Prediction: {prediction.shape}')
+        print(f'Target: {target_note.shape}')
     
         loss = loss_fn(prediction, target_note)
         
@@ -122,7 +124,6 @@ for epoch in range(num_epochs):
         best_val_loss = avg_val_loss
         epochs_without_improvement = 0
     else:
-
         epochs_without_improvement += 1
 
     if epochs_without_improvement >= patience:

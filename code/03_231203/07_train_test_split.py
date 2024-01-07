@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 
 # Load a MIDI file
-midi_file = './data/agnusdei_1.mid'  # Replace with the path to your MIDI file
+midi_file = '../../data/agnusdei_1.mid'  # Replace with the path to your MIDI file
 midi_data = pretty_midi.PrettyMIDI(midi_file)
 
 # Extract the melody (e.g., by choosing a specific instrument track)

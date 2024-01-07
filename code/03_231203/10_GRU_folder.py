@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 
 
 # GRU model, loading a folder
-midi_folder = './data'  # Replace with the path to your MIDI file
+midi_folder = '../../data'  # Replace with the path to your MIDI file
 
 midi_files = [os.path.join(midi_folder, f) for f in os.listdir(midi_folder) if f.endswith('.mid')]
 
